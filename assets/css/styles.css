@@ -1,0 +1,215 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Zen+Dots&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: hsl(11, 72%, 55%);
+  --first-color-dark: hsl(11, 63%, 50%);
+  --title-color: hsl(180, 4%, 98%);
+  --title-color-black: hsl(180, 4%, 12%);
+  --text-color: hsl(180, 4%, 72%);
+  --body-color: hsl(180, 12%, 8%);
+  --container-color: hsl(180, 6%, 12%);
+
+  /*========== Font family ==========*/
+  --body-font: 'Space Grotesk', sans-serif;
+  --second-font: 'Zen Dots', sans-serif;
+
+  /*========== Font sizes ==========*/
+  --big-font-size: 5rem;
+  --h1-font-size: 2.75rem;
+  --h2-font-size: 2.25rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semibold: 600;
+}
+
+/* Responsive typography */
+@media screen and (max-width: 1024px) {
+  :root {
+    --big-font-size: 2rem;
+    --h1-font-size: 1.75rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-family: var(--second-font);
+  font-weight: var(--font-regular);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 150%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.main-logo {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: var(--title-color);
+  /* font-family: var(--second-font); */
+  font-size: var(--h3-font-size);
+}
+.main-logo-img{
+  width: 20px;
+
+}
+.button{
+  display: inline-block;
+  /* background-color:var(--first-color) ; */
+  background-color:rgb(133, 100, 61);
+  padding: 1.25rem 2rem;
+  color: var(--title-color-black);
+  font-weight: var(--font-semibold);
+  transition: background 0.5s;
+}
+.button:hover{
+  background-color: white;
+}
+/*=============== LAYOUT ===============*/
+.container{
+  /* background-color: aquamarine; */
+  max-width: 1124px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+
+}
+/*=============== HEADER & NAV ===============*/
+.header{
+  background-color: var(--container-color);
+  position: fixed;
+  top:0 ;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.nav,
+.nav-list{
+  display: flex;
+  align-items: center;
+
+}
+.nav{
+  justify-content: space-between;
+  height: 5.5rem;
+}
+.nav-link,
+.nav-close,
+.nav-toggle{
+  color: var(--text-color);
+}
+.nav-list{
+  column-gap:4rem;
+}
+.nav-link{
+  transition: color 0.3s;
+
+}
+.nav-link:hover{
+  color: rgb(153, 10, 10);
+}
+/* Active link */
+
+/* Change background header */
+
+/*=============== MAIN ===============*/
+
+/*=============== HOME ===============*/
+
+/*=============== LOGOS ===============*/
+
+/*=============== CHOOSE US ===============*/
+
+/*=============== PROGRAM ===============*/
+
+/* Card hover */
+
+/*=============== PRICING ===============*/
+
+/* Active card */
+
+/*=============== CALCULATE ===============*/
+
+/*=============== MARQUEE ===============*/
+
+/* Animation */
+
+/*=============== FOOTER ===============*/
+
+/*=============== SCROLL BAR ===============*/
+
+/*=============== SCROLL UP ===============*/
+
+/* Show scroll up */
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+}
+
+/* For small devices */
+@media screen and (max-width: 360px) {
+}

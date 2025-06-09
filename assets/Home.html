@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ <h1></h1>
+
+
+ <div class="cart">
+
+    <ul id="first">
+        <li class="list1">
+            <img src="img/logo1.png" alt=""  id="god1">
+        </li>
+        <li class="list2">
+            <img src="img/home-img.png" alt=""  id="god2">
+        </li>
+    </ul>
+ </div>
+
+<script>
+// document.getElementById("god").onclick = function(){
+//     alert('hii')
+// // }
+
+// document.getElementById("god").addEventListener('click',function(){
+
+//     console.log("iam first");
+// } ,true)
+// document.getElementById("first").addEventListener('click',function(){
+
+//     console.log("i am secomd");
+// },true )
+
+document.querySelector('#first').addEventListener(
+    'click',function(e){
+        console.log(e.target.parentNode);
+        let remove =e.target.parentNode
+        // remove.remove()
+        remove.parentNode.removeChild(remove)
+    }
+)
+
+
+</script>
+</body>
+</html>
