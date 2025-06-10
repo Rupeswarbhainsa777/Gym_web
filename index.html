@@ -1,96 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!--=============== FAVICON ===============-->
-    <link
-      rel="shortcut icon"
-      href="assets/img/favicon.png"
-      type="image/x-icon"
-    />
-
-    <!--=============== REMIXICON ===============-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/styles.css" />
-
-    <title>Responsive gym website</title>
-  </head>
-  <body>
-    <!--=============== HEADER ===============-->
-    <header class="header" id="header">
-       <nav class="nav container" >
-        <a href="" class="main-logo">
-          <img src="assets/img/logo.png" alt="" class="main-logo-img">
-          GymGrow
-        </a>
-        <div class="nav-menue">
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a href="" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">Choose</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">Program</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="button nav-button">Register Now</a>
-            </li>
-          </ul>
-          <div class="nav-close">
-            <i class="ri-close-large-fill"></i>
-          </div>
-        </div>
-        <div class="nav-toggle">
-          <i class="ri-menu-line"></i>
-        </div>
-       </nav>
+<head>
+    <meta charset="UTF-8">
+    <title>GYMI - Build Perfect Body</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://img.icons8.com/ios-filled/50/000000/dumbbell.png" alt="GYMI Logo">
+                <span>GYMI</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">HOME</a></li>
+                <li><a href="#">PAGES</a></li>
+                <li><a href="#">PROGRAMS</a></li>
+                <li><a href="#">CLASSES</a></li>
+                <li><a href="#">TEAM</a></li>
+                <li><a href="#">PRICING</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li> <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search...">
+        <button class="search-btn">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <circle cx="13" cy="13" r="11" stroke="#fff" stroke-width="2"/>
+                <line x1="21.0711" y1="21.4853" x2="26" y2="26.4142" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div></li>
+            </ul>
+        </nav>
     </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>BUILD PERFECT BODY <br> WITH CLEAN MIND</h1>
+            <a href="#" class="btn">Read More</a>
+        </div>
+        <div class="hero-image">
+            <!-- Replace the src URL below with your own image if you wish -->
+            <img src="assets/img/choose-img.png" alt="Muscular Person Lifting Dumbbell">
+        </div>
+    </section>
 
-    <!--=============== MAIN ===============-->
-    <main class="main">
-      <!--=============== HOME ===============-->
-      <section class="home section" id="home"></section>
-
-      <!--=============== LOGOS ===============-->
-      <section class="logos container"></section>
-
-      <!--=============== CHOOSE US ===============-->
-      <section class="choose section" id="choose"></section>
-
-      <!--=============== PROGRAM ===============-->
-      <section class="program container section" id="program"></section>
-
-      <!--=============== PRICING ===============-->
-      <section class="pricing container section" id="pricing"></section>
-
-      <!--=============== CALCULATE ===============-->
-      <section class="calculate section"></section>
-
-      <!--=============== MARQUEE ===============-->
-      <section class="marquee section"></section>
-    </main>
-
-    <!--=============== FOOTER ===============-->
-    <footer class="footer container section" id="footer"></footer>
-
-    <!--=============== SCROLL UP ===============-->
-
-    <!--=============== SCROLLREVEAL ===============-->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!--=============== JS ===============-->
-    <script src="assets/js/main.js"></script>
-  </body>
+     <section class="testimonial-hero">
+        <div class="testimonial-image">
+            <!-- Replace the src URL with your own image if needed -->
+            <img src="assets/img/download__10_-removebg-preview.png" alt="Man lifting dumbbell">
+        </div>
+        <div class="testimonial-content">
+            <div class="testimonial-heading">
+                <div class="accent-line"></div>
+                <h1>What our<br>clients say</h1>
+            </div>
+            <p class="testimonial-desc">
+                the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing soft ware like Aldus Page
+            </p>
+            <div class="testimonial-buttons">
+                <a href="#" class="btn-primary">Testimonials <span class="plus">+</span></a>
+                <a href="#" class="btn-secondary">View prices <span class="plus">+</span></a>
+            </div>
+        </div>
+    </section>
+</body>
 </html>
