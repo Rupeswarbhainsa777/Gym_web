@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - GYMI</title>
+    <style>
+        body {
+    background: linear-gradient(120deg, #1cc7d0 0%, #3a3535 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+}
+
+.login-container {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.2);
+    width: 350px;
+   
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #1cc7d0;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.2s;
+    margin-right: 0px;
+}
+
+.input-group input:focus {
+    border: 1.5px solid #1cc7d0;
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #1cc7d0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: #139ba0;
+}
+
+.error-message {
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 10px;
+    min-height: 20px;
+    font-size: 0.98rem;
+}
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" id="loginForm">
+            <h2>Login to GYMI</h2>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <p class="error-message" id="errorMsg"></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const errorMsg = document.getElementById('errorMsg');
+
+    // Simple validation (replace with real authentication in production)
+    if (username === "admin" && password === "password") {
+        errorMsg.style.color = "green";
+        errorMsg.textContent = "Login successful! Redirecting...";
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 1200);
+    } else {
+        errorMsg.style.color = "#e74c3c";
+        errorMsg.textContent = "Invalid username or password.";
+    }
+});
+    </script>
+</body>
+</html>
