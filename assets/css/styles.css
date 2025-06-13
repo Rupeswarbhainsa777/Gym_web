@@ -26,6 +26,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0.7rem 3rem 0.7rem 2rem;
+    position: relative;
 }
 .logo {
     display: flex;
@@ -34,6 +35,7 @@ header {
     font-weight: bold;
     letter-spacing: 2px;
     color: #222;
+    z-index: 100;
 }
 .logo img {
     width: 32px;
@@ -462,7 +464,7 @@ header {
 
 .trainers-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -530,17 +532,129 @@ header {
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    .trainers {
-        padding: 3rem 5%;
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+    .trainers-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 0 1rem;
     }
-    
+}
+
+@media screen and (max-width: 992px) {
+    .trainers {
+        padding: 4rem 5%;
+    }
+
+    .trainers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trainer-image {
+        height: 280px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .trainers {
+        padding: 3rem 4%;
+    }
+
     .trainers-header h2 {
         font-size: 2rem;
     }
-    
+
     .trainers-grid {
         grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .trainer-card {
+        margin-bottom: 2rem;
+    }
+
+    .trainer-image {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .trainers {
+        padding: 2.5rem 3%;
+    }
+
+    .trainers-header {
+        margin-bottom: 2rem;
+    }
+
+    .trainers-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .trainers-header p {
+        font-size: 0.95rem;
+    }
+
+    .trainer-image {
+        height: 260px;
+    }
+
+    .trainer-content {
+        padding: 1.2rem;
+    }
+
+    .trainer-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .trainer-content .specialty {
+        font-size: 0.95rem;
+    }
+
+    .trainer-content .experience {
+        font-size: 0.9rem;
+    }
+
+    .trainer-content .description {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .trainer-content .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .trainers {
+        padding: 2rem 2%;
+    }
+
+    .trainers-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .trainer-image {
+        height: 240px;
+    }
+
+    .trainer-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .trainer-content .specialty {
+        font-size: 0.9rem;
+    }
+
+    .trainer-content .description {
+        font-size: 0.9rem;
+    }
+
+    .trainer-content .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
     }
 }
 
@@ -662,5 +776,133 @@ header {
     
     .contact-form {
         padding: 30px 20px;
+    }
+}
+
+/* Navigation Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 3rem 0.7rem 2rem;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #222;
+    z-index: 100;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #ff5757;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #222;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Navigation Styles */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 0.7rem 1.5rem;
+    }
+
+    .nav-links {
+        width: 85%;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .logo img {
+        width: 28px;
+        height: 28px;
     }
 }
