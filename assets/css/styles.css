@@ -437,6 +437,113 @@ header {
     color: #888;
   }
 
+/* Trainers Section Styles */
+.trainers {
+    padding: 5rem 8%;
+    background: #f7f8f9;
+}
+
+.trainers-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.trainers-header h2 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.trainers-header p {
+    color: #7b7b7b;
+    font-size: 1.1rem;
+}
+
+.trainers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trainer-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.trainer-card:hover {
+    transform: translateY(-5px);
+}
+
+.trainer-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.trainer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.trainer-card:hover .trainer-image img {
+    transform: scale(1.05);
+}
+
+.trainer-content {
+    padding: 1.5rem;
+}
+
+.trainer-content h3 {
+    font-size: 1.4rem;
+    margin: 0 0 0.5rem 0;
+    color: #222;
+}
+
+.trainer-content .specialty {
+    color: #ff5757;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.trainer-content .experience {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+}
+
+.trainer-content .description {
+    color: #7b7b7b;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.6;
+}
+
+.trainer-content .btn {
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .trainers {
+        padding: 3rem 5%;
+    }
+    
+    .trainers-header h2 {
+        font-size: 2rem;
+    }
+    
+    .trainers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Contact Section Styles */
 .contact {
     padding: 80px 20px;
