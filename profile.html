@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - GYMI</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://img.icons8.com/ios-filled/50/000000/dumbbell.png" alt="GYMI Logo">
+                <span>GYMI</span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#" class="active">PROFILE</a></li>
+                <li><a href="Login.html">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="settings-container" style="display: flex; justify-content: center; align-items: flex-start; min-height: 80vh; background: #f7f8f9;">
+        <!-- Sidebar Settings -->
+        <aside class="settings-sidebar" style="background: #fff; border-radius: 1rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem 1.5rem; width: 320px; margin: 2rem 2rem 2rem 0;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem;">Settings</h2>
+            <div style="margin-bottom: 2rem;">
+                <div style="font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.2rem;">&#128100;</span> Account
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 1rem;"><a href="#" style="color: #222; text-decoration: none;">Edit profile</a></li>
+                    <li style="margin-bottom: 1rem;"><a href="#" style="color: #bbb; text-decoration: none; cursor: not-allowed;">Change password</a></li>
+                    <li><a href="#" style="color: #bbb; text-decoration: none; cursor: not-allowed;">Facebook</a></li>
+                </ul>
+            </div>
+            <div style="margin-bottom: 2rem;">
+                <div style="font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.2rem;">&#128276;</span> Notifications
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                        <span>Notifications</span>
+                        <input type="checkbox" disabled>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; align-items: center;">
+                        <span>App notification</span>
+                        <input type="checkbox" checked>
+                    </li>
+                </ul>
+            </div>
+            <div style="margin-bottom: 2rem;">
+                <div style="font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.2rem;">&#128196;</span> More
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 1rem;"><a href="#" style="color: #bbb; text-decoration: none; cursor: not-allowed;">Language</a></li>
+                    <li><a href="#" style="color: #bbb; text-decoration: none; cursor: not-allowed;">Country</a></li>
+                </ul>
+            </div>
+            <button style="margin-top: 2rem; width: 100%; background: #f7f8f9; border: none; border-radius: 8px; padding: 0.8rem; font-weight: 600; color: #222; box-shadow: 0 2px 8px rgba(0,0,0,0.04); cursor: pointer;">Logout</button>
+        </aside>
+        <!-- Edit Profile Form -->
+        <main class="edit-profile-main" style="background: #fff; border-radius: 1rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2.5rem 3rem; max-width: 480px; width: 100%; margin: 2rem 0;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem;">Edit profile</h2>
+            <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 1.5rem;">
+                    <div style="position: relative;">
+                        <img src="assets/img/Perfil joven con barba.jpeg" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+                        <label for="profile-pic-upload" style="position: absolute; bottom: 0; right: 0; background: #f7f8f9; border-radius: 50%; padding: 0.3rem; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
+                            <input id="profile-pic-upload" type="file" accept="image/*" style="display: none;">
+                            <span style="font-size: 1.2rem; color: #222;">&#9998;</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label for="username" style="font-weight: 600; color: #222; margin-bottom: 0.3rem; display: block;">User Name</label>
+                    <input id="username" name="username" type="text" value="john_doe" style="width: 100%; padding: 0.7rem; border-radius: 6px; border: 1px solid #ddd; font-size: 1rem;">
+                </div>
+                <div>
+                    <label for="fullname" style="font-weight: 600; color: #222; margin-bottom: 0.3rem; display: block;">Full Name</label>
+                    <input id="fullname" name="fullname" type="text" value="John Doe" style="width: 100%; padding: 0.7rem; border-radius: 6px; border: 1px solid #ddd; font-size: 1rem;">
+                </div>
+                <div>
+                    <label for="email" style="font-weight: 600; color: #222; margin-bottom: 0.3rem; display: block;">E-mail ID</label>
+                    <input id="email" name="email" type="email" value="john_doe@email.com" style="width: 100%; padding: 0.7rem; border-radius: 6px; border: 1px solid #ddd; font-size: 1rem;">
+                </div>
+                <div>
+                    <label for="password" style="font-weight: 600; color: #222; margin-bottom: 0.3rem; display: block;">Password</label>
+                    <input id="password" name="password" type="password" value="password" style="width: 100%; padding: 0.7rem; border-radius: 6px; border: 1px solid #ddd; font-size: 1rem;">
+                </div>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Save Changes</button>
+            </form>
+        </main>
+    </section>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
