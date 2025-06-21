@@ -1,0 +1,212 @@
+body {
+    background: #f6f9fc;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    display: flex;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    min-height: 700px;
+    overflow: hidden;
+}
+
+.sidebar {
+    background: #f8fafc;
+    width: 240px;
+    padding: 40px 0 0 0;
+    border-right: 1px solid #e3e8ee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+.sidebar ul li {
+    padding: 16px 32px;
+    color: #3a3d4d;
+    font-size: 1.08rem;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+}
+.sidebar ul li.active, .sidebar ul li:hover {
+    background: #eaf1fb;
+    border-left: 4px solid #3b82f6;
+    color: #2563eb;
+}
+.signout {
+    margin-top: auto;
+    padding: 24px 0 32px 0;
+    color: #e57373;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+}
+
+.profile-main {
+    flex: 1;
+    padding: 48px 56px;
+}
+.profile-main h2 {
+    margin: 0 0 8px 0;
+    font-size: 2rem;
+    color: #22223b;
+}
+.subtitle {
+    color: #7b7f8a;
+    margin-bottom: 32px;
+}
+.profile-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+.profile-info {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 220px;
+    max-width: 220px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.profile-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 18px;
+    border: 3px solid #e3e8ee;
+}
+.profile-name h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #22223b;
+}
+.profile-name .phone {
+    color: #7b7f8a;
+    font-size: 0.98rem;
+    margin-top: 4px;
+}
+.general-info, .security-info {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 28px 24px 20px 24px;
+    flex: 1 1 320px;
+    min-width: 320px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    margin-bottom: 18px;
+}
+.general-info h4, .security-info h4 {
+    margin-top: 0;
+    color: #3a3d4d;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+}
+.input-row {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.input-group label {
+    font-size: 0.98rem;
+    color: #7b7f8a;
+    margin-bottom: 6px;
+}
+.input-group input {
+    padding: 10px 12px;
+    border: 1px solid #e3e8ee;
+    border-radius: 7px;
+    font-size: 1rem;
+    background: #fff;
+    outline: none;
+    transition: border 0.2s;
+}
+.input-group input:focus {
+    border: 1.5px solid #3b82f6;
+}
+.update-btn {
+    background: #e3e8ee;
+    color: #7b7f8a;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: not-allowed;
+    margin-top: 8px;
+}
+.button-row {
+    display: flex;
+    gap: 16px;
+}
+.change-btn {
+    background: #fff;
+    color: #2563eb;
+    border: 1.5px solid #2563eb;
+    border-radius: 7px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.change-btn:hover {
+    background: #2563eb;
+    color: #fff;
+}
+@media (max-width: 900px) {
+    .profile-container {
+        flex-direction: column;
+        min-height: unset;
+    }
+    .sidebar {
+        flex-direction: row;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e3e8ee;
+        padding: 0;
+        justify-content: space-between;
+    }
+    .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+    .sidebar ul li {
+        padding: 14px 18px;
+        border-left: none;
+        border-bottom: 4px solid transparent;
+    }
+    .sidebar ul li.active, .sidebar ul li:hover {
+        border-left: none;
+        border-bottom: 4px solid #3b82f6;
+    }
+    .signout {
+        padding: 0 18px;
+    }
+    .profile-main {
+        padding: 32px 12px;
+    }
+    .profile-content {
+        flex-direction: column;
+        gap: 18px;
+    }
+}
