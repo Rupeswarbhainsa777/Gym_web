@@ -99,22 +99,34 @@ button[type="submit"]:hover {
         </form>
     </div>
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value.trim();
     const errorMsg = document.getElementById('errorMsg');
 
-    // Simple validation (replace with real authentication in production)
-    if (username === "admin" && password === "password") {
-        errorMsg.style.color = "green";
-        errorMsg.textContent = "Login successful! Redirecting...";
-        setTimeout(() => {
-            window.location.href = "index.html";
-        }, 1200);
-    } else {
+    // Fetch users from users.json
+    try {
+        const response = await fetch('users.json');
+        if (!response.ok) throw new Error('Could not load user data');
+        const users = await response.json();
+        // Match by email and password
+        const user = users.find(u => u.email === username && u.password === password);
+        if (user) {
+            // Store user info in localStorage
+            localStorage.setItem('loggedInUser', JSON.stringify(user));
+            errorMsg.style.color = "green";
+            errorMsg.textContent = "Login successful! Redirecting...";
+            setTimeout(() => {
+                window.location.href = "profile.html";
+            }, 1200);
+        } else {
+            errorMsg.style.color = "#e74c3c";
+            errorMsg.textContent = "Invalid username or password.";
+        }
+    } catch (err) {
         errorMsg.style.color = "#e74c3c";
-        errorMsg.textContent = "Invalid username or password.";
+        errorMsg.textContent = "Error loading user data.";
     }
 });
     </script>
