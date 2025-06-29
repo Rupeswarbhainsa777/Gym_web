@@ -12,15 +12,44 @@
     justify-content: center;
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('assets/img/logo.png') no-repeat center 10%/120px,
+                repeating-radial-gradient(circle at 80% 80%, #1cc7d0 0px, #3a3535 1px, transparent 80px);
+    opacity: 0.07;
+    z-index: 0;
 }
 
 .login-container {
-    background: #fff;
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+    padding: 44px 32px 36px 32px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18), 0 1.5px 8px rgba(28, 199, 208, 0.08);
     width: 350px;
-   
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(28, 199, 208, 0.18);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(28, 199, 208, 0.13);
+    background: #fff;
+    padding: 7px;
 }
 
 .login-form h2 {
@@ -28,71 +57,103 @@
     margin-bottom: 24px;
     color: #1cc7d0;
     letter-spacing: 1px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 1px 2px #fff8;
 }
 
 .input-group {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 6px;
-    color: #333;
-    font-weight: 500;
+    margin-bottom: 7px;
+    color: #222;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .input-group input {
     width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border 0.2s;
+    padding: 12px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    background: rgba(255,255,255,0.7);
+    transition: border 0.2s, box-shadow 0.2s;
     margin-right: 0px;
+    outline: none;
+    color: #222;
+    box-shadow: 0 1px 2px #1cc7d01a;
 }
 
 .input-group input:focus {
     border: 1.5px solid #1cc7d0;
-    outline: none;
+    box-shadow: 0 0 0 2px #1cc7d033;
+    background: #fff;
 }
 
 button[type="submit"] {
     width: 100%;
-    padding: 12px;
-    background: #1cc7d0;
+    padding: 13px;
+    background: linear-gradient(90deg, #1cc7d0 60%, #139ba0 100%);
     color: #fff;
     border: none;
-    border-radius: 6px;
-    font-size: 1.1rem;
+    border-radius: 8px;
+    font-size: 1.13rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.18s, transform 0.12s;
+    box-shadow: 0 2px 8px #1cc7d022;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
 }
 
 button[type="submit"]:hover {
-    background: #139ba0;
+    background: linear-gradient(90deg, #139ba0 0%, #1cc7d0 100%);
+    transform: translateY(-2px) scale(1.03);
 }
 
 .error-message {
     color: #e74c3c;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 12px;
     min-height: 20px;
-    font-size: 0.98rem;
+    font-size: 1.01rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 98vw;
+        min-width: 0;
+        padding: 28px 8vw 24px 8vw;
+    }
+    .login-form h2 {
+        font-size: 1.3rem;
+    }
+    .login-logo {
+        width: 54px;
+        height: 54px;
+    }
 }
     </style>
 </head>
 <body>
     <div class="login-container">
         <form class="login-form" id="loginForm">
+            <img src="assets/img/logo.png" alt="GYMI Logo" class="login-logo">
             <h2>Login to GYMI</h2>
             <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" required>
+                <label for="username">Email</label>
+                <input type="text" id="username" placeholder="Enter your email" required>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" required>
+                <input type="password" id="password" placeholder="Enter your password" required>
             </div>
             <button type="submit">Login</button>
             <p class="error-message" id="errorMsg"></p>
