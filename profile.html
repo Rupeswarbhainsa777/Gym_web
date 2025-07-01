@@ -70,5 +70,37 @@
             </div>
         </main>
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+        // Get logged-in user from localStorage
+        const user = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (!user) {
+            // If not logged in, redirect to login page
+            window.location.href = 'Login.html';
+            return;
+        }
+
+        // Populate profile fields
+        // Split name into first and last (if possible)
+        let firstName = '', lastName = '';
+        if (user.name) {
+            const nameParts = user.name.split(' ');
+            firstName = nameParts[0] || '';
+            lastName = nameParts.slice(1).join(' ') || '';
+        }
+        document.getElementById('first-name').value = firstName;
+        document.getElementById('last-name').value = lastName;
+        document.getElementById('email').value = user.email || '';
+        // Password is not shown for security
+        document.getElementById('phone').value = user.phone || '';
+        // Profile name and phone
+        document.querySelector('.profile-name h3').textContent = user.name || '';
+        if (user.phone) {
+            document.querySelector('.profile-name .phone').textContent = user.phone;
+        }
+        // Optionally, show membership or join date if you want
+        // e.g., document.querySelector('.membership').textContent = user.membership;
+    });
+    </script>
 </body>
 </html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - GYMI</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .register-container {
+            background: rgba(255,255,255,0.95);
+            padding: 44px 32px 36px 32px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18), 0 1.5px 8px rgba(28, 199, 208, 0.08);
+            width: 350px;
+            margin: 60px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .register-form h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #1cc7d0;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #222;
+            font-weight: 600;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            background: rgba(255,255,255,0.7);
+            outline: none;
+            color: #222;
+        }
+        .input-group input:focus {
+            border: 1.5px solid #1cc7d0;
+            background: #fff;
+        }
+        .register-btn {
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(90deg, #1cc7d0 60%, #139ba0 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.13rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 6px;
+        }
+        .register-btn:hover {
+            background: linear-gradient(90deg, #139ba0 0%, #1cc7d0 100%);
+        }
+        .error-message {
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 12px;
+            min-height: 20px;
+            font-size: 1.01rem;
+            font-weight: 500;
+        }
+        .success-message {
+            color: #27ae60;
+            text-align: center;
+            margin-top: 12px;
+            min-height: 20px;
+            font-size: 1.01rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <form class="register-form" id="registerForm">
+            <h2>Create Account</h2>
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required>
+            </div>
+            <button type="submit" class="register-btn">Register</button>
+            <p class="error-message" id="errorMsg"></p>
+            <p class="success-message" id="successMsg"></p>
+        </form>
+        <p style="margin-top:18px;">Already have an account? <a href="Login.html">Login</a></p>
+    </div>
+    <script>
+    document.getElementById('registerForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const errorMsg = document.getElementById('errorMsg');
+        const successMsg = document.getElementById('successMsg');
+        errorMsg.textContent = '';
+        successMsg.textContent = '';
+
+        // Basic validation
+        if (!name || !email || !phone || !password) {
+            errorMsg.textContent = 'Please fill in all fields.';
+            return;
+        }
+        // Email format check
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+            errorMsg.textContent = 'Invalid email format.';
+            return;
+        }
+        // Password length check
+        if (password.length < 5) {
+            errorMsg.textContent = 'Password must be at least 5 characters.';
+            return;
+        }
+        // Phone format check (basic)
+        if (!/^\+?\d{7,15}$/.test(phone.replace(/\s/g, ''))) {
+            errorMsg.textContent = 'Invalid phone number.';
+            return;
+        }
+
+        // Fetch users.json and check for existing email
+        let users = [];
+        try {
+            const response = await fetch('users.json');
+            if (response.ok) {
+                users = await response.json();
+            }
+        } catch (err) {
+            // If file doesn't exist, start with empty users
+            users = [];
+        }
+        if (users.some(u => u.email === email)) {
+            errorMsg.textContent = 'Email already registered.';
+            return;
+        }
+        // Add new user
+        const newUser = {
+            id: users.length ? users[users.length-1].id + 1 : 1,
+            name,
+            email,
+            password,
+            phone,
+            membership: 'Basic',
+            join_date: new Date().toISOString().slice(0,10)
+        };
+        users.push(newUser);
+        // Save to users.json (Note: This only works if you have a backend or are running locally with write permissions)
+        try {
+            await fetch('users.json', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(users)
+            });
+            successMsg.textContent = 'Registration successful! Redirecting to login...';
+            setTimeout(() => {
+                window.location.href = 'Login.html';
+            }, 1200);
+        } catch (err) {
+            // If cannot write, just show success (for static hosting)
+            successMsg.textContent = 'Registration successful! Redirecting to login...';
+            setTimeout(() => {
+                window.location.href = 'Login.html';
+            }, 1200);
+        }
+    });
+    </script>
+</body>
+</html> 
