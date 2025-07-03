@@ -906,3 +906,177 @@ header {
         height: 28px;
     }
 }
+
+/* --- UI Overhaul: Modern, Clean, and Interactive --- */
+
+/* 1. Global Enhancements */
+body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #f3f6fb 100%);
+    color: #23272f;
+    font-family: 'Montserrat', Arial, sans-serif;
+    letter-spacing: 0.01em;
+}
+
+section {
+    margin-bottom: 3rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 24px rgba(51, 181, 199, 0.04);
+    background: #fff;
+}
+
+/* 2. Navbar Improvements */
+header {
+    background: rgba(255,255,255,0.98);
+    box-shadow: 0 2px 12px rgba(51, 181, 199, 0.08);
+    transition: box-shadow 0.2s;
+}
+.navbar {
+    border-radius: 0 0 1.2rem 1.2rem;
+    box-shadow: 0 2px 8px rgba(51, 181, 199, 0.04);
+}
+.logo {
+    transition: color 0.2s, transform 0.2s;
+}
+.logo:hover {
+    color: #ff5757;
+    transform: scale(1.05);
+}
+
+/* 3. Button Enhancements */
+.btn, .btn-primary, .btn-secondary, .contact-form .btn {
+    background: linear-gradient(90deg, #ff5757 60%, #33b5c7 100%);
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.9rem 2.2rem;
+    box-shadow: 0 4px 16px rgba(255,87,87,0.10);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+}
+.btn:hover, .btn-primary:hover, .btn-secondary:hover, .contact-form .btn:hover {
+    background: linear-gradient(90deg, #33b5c7 0%, #ff5757 100%);
+    box-shadow: 0 6px 24px rgba(51,181,199,0.13);
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* 4. Card and Section Styling */
+.testimonial-card, .trainer-card, .contact-form {
+    border-radius: 1.2rem;
+    box-shadow: 0 6px 32px rgba(51, 181, 199, 0.10);
+    border: 1px solid #e3eaf1;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.testimonial-card:hover, .trainer-card:hover, .contact-form:hover {
+    box-shadow: 0 12px 40px rgba(255,87,87,0.13);
+    transform: translateY(-4px) scale(1.02);
+}
+
+/* 5. Hero Section */
+.hero {
+    background: linear-gradient(120deg, #fff 60%, #e3f6f9 100%);
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 32px rgba(51, 181, 199, 0.10);
+    margin-top: 1.5rem;
+}
+.hero-content h1 {
+    font-family: 'Zen Dots', 'Montserrat', Arial, sans-serif;
+    font-size: 2.8rem;
+    color: #ff5757;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 8px rgba(255,87,87,0.07);
+}
+.hero-content p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2.2rem;
+}
+.hero-image img {
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 24px rgba(51, 181, 199, 0.13);
+}
+
+/* 6. Section Headers */
+.testimonials-header h2, .trainers-header h2, .contact-info h2, .about-right h2 {
+    font-family: 'Zen Dots', 'Montserrat', Arial, sans-serif;
+    color: #33b5c7;
+    font-size: 2.4rem;
+    letter-spacing: 1.2px;
+    margin-bottom: 0.7em;
+    text-shadow: 0 2px 8px rgba(51,181,199,0.07);
+}
+
+/* 7. Inputs and Forms */
+.form-group input, .form-group textarea, .search-input {
+    border: 1.5px solid #e3eaf1;
+    border-radius: 1.2rem;
+    background: #f7fafd;
+    font-size: 1.05rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus, .search-input:focus {
+    border-color: #33b5c7;
+    box-shadow: 0 2px 8px rgba(51,181,199,0.10);
+}
+
+/* 8. Testimonial and Trainer Images */
+.testimonial-image, .trainer-image {
+    border-radius: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(51,181,199,0.10);
+}
+
+/* 9. About Section */
+.about-gymat {
+    background: linear-gradient(120deg, #fff 60%, #e3f6f9 100%);
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 32px rgba(51, 181, 199, 0.10);
+}
+.about-label {
+    background: linear-gradient(90deg, #ff5757 60%, #33b5c7 100%);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 2rem;
+    padding: 0.4em 1.2em;
+    letter-spacing: 0.08em;
+}
+
+/* 10. Section Dividers */
+section:not(:last-child) {
+    margin-bottom: 3.5rem;
+    border-bottom: 2px solid #e3eaf1;
+    padding-bottom: 2.5rem;
+}
+
+/* 11. Micro-Interactions */
+.card, .btn, .form-group input, .form-group textarea, .search-input {
+    transition: box-shadow 0.2s, transform 0.15s, background 0.2s, border-color 0.2s;
+}
+
+/* 12. Responsive Tweaks */
+@media (max-width: 768px) {
+    section {
+        border-radius: 0.7rem;
+        margin-bottom: 2rem;
+    }
+    .hero {
+        border-radius: 0.7rem;
+    }
+    .testimonial-card, .trainer-card, .contact-form {
+        border-radius: 0.7rem;
+    }
+}
+@media (max-width: 480px) {
+    .hero-content h1, .testimonials-header h2, .trainers-header h2, .contact-info h2, .about-right h2 {
+        font-size: 1.5rem;
+    }
+    .btn, .btn-primary, .btn-secondary, .contact-form .btn {
+        font-size: 1rem;
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+/* --- End UI Overhaul --- */
