@@ -56,9 +56,6 @@ gym-website/
 git clone https://github.com/yourusername/gym-website.git
 cd gym-website
 open index.html  # or just double-click it
-🧑‍💻 Author
-Created by Rupeswar Bhainsa – rupeswarbhainsa777@gmail.com
-⚖️ License
-This project is open source and available under the MIT License.
+
 
 
