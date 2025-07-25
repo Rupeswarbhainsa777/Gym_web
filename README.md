@@ -27,7 +27,7 @@ gym-website/
 ├── style.css # Main stylesheet
 ├── script.js # JavaScript file
 ├── images/ # Folder for images
-└── README.md # Project description
+
 ```
 
 
